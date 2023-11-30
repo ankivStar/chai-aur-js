@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const startPrinting = document.querySelector('#start')
+    const stopPrinting = document.querySelector('#stop')
+
+    const sayDate = function(){
+        console.log("Ankit");
+    }
+
+    let intervalId;
+    startPrinting.addEventListener('click', function(){
+        if(!intervalId){
+            intervalId = setInterval(sayDate, 1000);
+        }
+    })
+    stopPrinting.addEventListener('click', function(){
+        clearInterval(intervalId)
+        intervalId = null;
+    })
+</script>
+</html>
